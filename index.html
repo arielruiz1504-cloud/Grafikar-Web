@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafikar - Impresores SpA</title>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           1. VARIABLES Y REGLAS GENERALES
+           ========================================== */
+        :root {
+            --primary-blue: #0e8bc9;
+            --dark-blue: #114c73;
+            --magenta: #d8128a;
+            --orange: #f58220;
+            --teal: #22a8a0;
+            --dark-bg: #0b0c10;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-muted: #6c757d;
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rainbow-bar {
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--magenta) 33%, var(--orange) 66%, var(--teal) 100%);
+        }
+
+        /* ==========================================
+           2. HEADER & NAVEGACIÓN
+           ========================================== */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Logo de sustitución basado en la imagen */
+        .logo-text {
+            font-family: 'Brush Script MT', cursive, var(--font-title);
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #000;
+            position: relative;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-family: var(--font-title);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--dark-blue);
+        }
+
+        /* ==========================================
+           3. HEROSHET / INICIO
+           ========================================== */
+        .hero {
+            padding: 30px 0 60px 0;
+            background-color: #ffffff;
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cat-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+
+        .btn-papeleria { background-color: var(--primary-blue); }
+        .btn-publicidad { background-color: var(--magenta); }
+        .btn-impresion  { background-color: var(--orange); }
+        .btn-stands     { background-color: var(--teal); }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-title);
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-blue);
+        }
+
+        .hero-text p {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--dark-blue);
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #0b3450;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* ==========================================
+           4. SECCIÓN QUE HACEMOS
+           ========================================== */
+        .que-hacemos {
+            padding: 60px 0 80px 0;
+            background-color: #ffffff;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .card-title.papeleria { color: var(--primary-blue); }
+        .card-title.publicidad { color: var(--magenta); }
+        .card-title.impresion  { color: var(--orange); }
+        .card-title.stands     { color: var(--teal); }
+
+        .card-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .center-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-orange {
+            background-color: var(--orange);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .btn-orange:hover {
+            background-color: #e07216;
+        }
+
+        /* ==========================================
+           5. SECCIÓN PRODUCTOS
+           ========================================== */
+        .productos-section {
+            padding: 60px 0 80px 0;
+            background-color: #ffffff;
+        }
+
+        .productos-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr 280px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Menú Lateral */
+        .prod-sidebar {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+
+        .prod-item {
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #495057;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .prod-item .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-blue { background-color: var(--primary-blue); }
+        .dot-pink { background-color: var(--magenta); }
+        .dot-orange { background-color: var(--orange); }
+        .dot-teal { background-color: var(--teal); }
+
+        .prod-item:hover,
+        .prod-item.active {
+            background-color: #eef7fc;
+            color: var(--primary-blue);
+        }
+
+        /* Columna Central */
+        .prod-detail-title {
+            font-family: var(--font-title);
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .prod-detail-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .prod-detail-img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            max-height: 220px;
+            margin-bottom: 25px;
+        }
+
+        /* Columna Derecha (Características) */
+        .features-card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .features-header {
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 12px 15px;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-box {
+            padding: 12px 15px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .feature-box h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #212529;
+        }
+
+        .feature-box p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================
+           6. SECCIÓN PORTAFOLIO / GALERÍA
+           ========================================== */
+        .portafolio-section {
+            padding: 60px 0 80px 0;
+            background-color: #ffffff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            height: 220px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item img:hover {
+            transform: scale(1.03);
+        }
+
+        /* ==========================================
+           7. SECCIÓN CONTACTO
+           ========================================== */
+        .contacto-section {
+            padding: 60px 0 80px 0;
+            background-color: #ffffff;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #495057;
+        }
+
+        .info-item i {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .info-item.pink i {
+            color: var(--magenta);
+        }
+
+        .info-item.orange i {
+            color: var(--orange);
+        }
+
+        /* Card Formulario */
+        .contact-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--magenta);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #b80d74;
+        }
+
+        /* ==========================================
+           8. FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--dark-bg);
+            color: #a0a6b1;
+            font-size: 0.8rem;
+            padding-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1.2fr 1fr 1.2fr;
+            gap: 25px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo-text {
+            color: #ffffff;
+            font-family: 'Brush Script MT', cursive, var(--font-title);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-desc {
+            line-height: 1.5;
+            font-size: 0.78rem;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #a0a6b1;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .footer-contact-item i {
+            margin-top: 3px;
+        }
+
+        .btn-footer-quote {
+            display: block;
+            width: 100%;
+            background-color: var(--orange);
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn-footer-quote:hover {
+            background-color: #e07216;
+        }
+
+        .footer-bottom {
+            background-color: #050608;
+            padding: 15px 0;
+            border-top: 1px solid #1a1c23;
+            font-size: 0.7rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           9. RESPONSIVE DESIGN (MEDIA QUERIES)
+           ========================================== */
+        @media (max-width: 992px) {
+            .hero-content, 
+            .contacto-grid,
+            .productos-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cards-grid, 
+            .portfolio-grid, 
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-menu {
+                display: none; /* Ideal para implementar menú hamburguesa */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rainbow-bar"></div>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <!-- SVG Simulado del Isotipo de Grafikar -->
+                <svg width="140" height="40" viewBox="0 0 200 60">
+                    <path d="M 30 10 A 20 20 0 1 0 30 50 A 20 20 0 0 0 30 10 Z" fill="none" stroke="#d8128a" stroke-width="4"/>
+                    <path d="M 35 15 A 15 15 0 0 1 45 40" fill="none" stroke="#0e8bc9" stroke-width="4"/>
+                    <path d="M 20 35 A 15 15 0 0 1 35 45" fill="none" stroke="#f58220" stroke-width="4"/>
+                    <text x="55" y="38" font-family="'Brush Script MT', cursive, sans-serif" font-size="32" font-weight="bold" fill="#000">Grafikar</text>
+                    <text x="56" y="48" font-family="sans-serif" font-size="6" fill="#666" letter-spacing="1">IMPRESORES SpA</text>
+                </svg>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#que-hacemos" class="nav-link">Que Hacemos</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#portafolio" class="nav-link">Galería</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- INICIO / HERO -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="category-buttons">
+                <button class="cat-btn btn-papeleria">Papelería Corporativa</button>
+                <button class="cat-btn btn-publicidad">Publicidad Impresa</button>
+                <button class="cat-btn btn-impresion">Impresión Digital</button>
+                <button class="cat-btn btn-stands">Stands</button>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>IMPRESIONA<br>CON <span>GRAFIKAR</span></h1>
+                    <p>Elementos gráficos esenciales para tu proyecto, presentación o empresa</p>
+                    <a href="#que-hacemos" class="btn-main">Conócenos</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=800&q=80" alt="Materiales de papelería corporativa Grafikar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUE HACEMOS -->
+    <section id="que-hacemos" class="que-hacemos">
+        <div class="container">
+            <h2 class="section-title">QUE HACEMOS</h2>
+            <p class="section-subtitle">Utilizamos tecnología óptima en nuestras producciones gráficas para garantizar nuestro servicio en impresión, materiales y publicitarios.</p>
+
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&q=80" alt="Papelería Corporativa" class="card-img">
+                    <h3 class="card-title papeleria">Papelería Corporativa</h3>
+                    <p class="card-desc">Diseñamos y producimos todos los elementos de tu papelería corporativa: desde la creación del logotipo hasta tarjetas de visita, carpetas, papeles, formularios y facturas.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=400&q=80" alt="Publicidad Impresa" class="card-img">
+                    <h3 class="card-title publicidad">Publicidad Impresa</h3>
+                    <p class="card-desc">Especializados en impresión al por mayor de publicidad. Colaboramos con tu empresa haciendo un análisis de mercado y asesorando el uso de materiales y nuevas tendencias.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=400&q=80" alt="Impresión Digital" class="card-img">
+                    <h3 class="card-title impresion">Impresión Digital</h3>
+                    <p class="card-desc">Inversión permanente en nuevas tecnologías para brindar un servicio de impresión digital adecuado a cada cliente, combinando calidad y tiempos de entrega.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1531058240690-006c446962d8?auto=format&fit=crop&w=400&q=80" alt="Stands Publicitarios" class="card-img">
+                    <h3 class="card-title stands">Stands Publicitarios</h3>
+                    <p class="card-desc">Construimos y fabricamos proyectos de instalación y montaje de stands para exposiciones, congresos y ferias, garantizando su desmontaje y reutilización.</p>
+                </div>
+            </div>
+
+            <div class="center-btn-container">
+                <button class="btn-orange">Cotizar Servicios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="productos-section">
+        <div class="container">
+            <h2 class="section-title">PRODUCTOS</h2>
+            <p class="section-subtitle">Nuestros productos más solicitados: explora cada uno para conocer sus materiales, acabados y formatos disponibles.</p>
+
+            <div class="productos-layout">
+                <!-- Menú Lateral -->
+                <div class="prod-sidebar">
+                    <div class="prod-item active"><span class="dot dot-blue"></span> Tarjetas de Presentación</div>
+                    <div class="prod-item"><span class="dot dot-pink"></span> Pendones y Lonas</div>
+                    <div class="prod-item"><span class="dot dot-orange"></span> Letreros y Señalética</div>
+                    <div class="prod-item"><span class="dot dot-teal"></span> Carpetas Corporativas</div>
+                    <div class="prod-item"><span class="dot dot-blue"></span> Flyers y Folletos</div>
+                    <div class="prod-item"><span class="dot dot-pink"></span> Stands y Exhibidores</div>
+                    <div class="prod-item"><span class="dot dot-teal"></span> Agendas Escolares</div>
+                    <div class="prod-item"><span class="dot dot-blue"></span> Anuarios</div>
+                    <div class="prod-item"><span class="dot dot-pink"></span> Etiquetas Autoadhesivas</div>
+                    <div class="prod-item"><span class="dot dot-orange"></span> Envases y Packaging</div>
+                </div>
+
+                <!-- Detalle Central -->
+                <div class="prod-detail">
+                    <h3 class="prod-detail-title">Tarjetas de Presentación</h3>
+                    <p class="prod-detail-desc">Las tarjetas de presentación empresariales son ideales para dar a conocer tu marca. Cuidamos que tu diseño y contenido generen un gran impacto en cada entrega.</p>
+                    <button class="btn-main" style="margin-bottom: 20px;">Cotizar Tarjetas de Presentación</button>
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Tarjetas de Presentación" class="prod-detail-img">
+                </div>
+
+                <!-- Tabla/Características -->
+                <div class="features-card">
+                    <div class="features-header">Características Principales</div>
+                    <div class="feature-box">
+                        <h4>Tamaños</h4>
+                        <p>9 x 5 cm estándar y formatos personalizados</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Material</h4>
+                        <p>Couché 300 g, opalina, reciclado y cartulinas especiales</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Acabados</h4>
+                        <p>Estándar, plastificado mate, plastificado brillante</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Puntas</h4>
+                        <p>Rectas o redondeadas</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Modo de impresión</h4>
+                        <p>Tiro simple o tiro y retiro, full color</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section id="portafolio" class="portafolio-section">
+        <div class="container">
+            <h2 class="section-title">PORTAFOLIO</h2>
+            <div class="portfolio-grid" style="margin-top: 40px;">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" alt="Muestras papelería">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=500&q=80" alt="Folletos e impresos">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80" alt="Tarjetas corporativas">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1531058240690-006c446962d8?auto=format&fit=crop&w=500&q=80" alt="Stand publicitario">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=80" alt="Impresión gran formato">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=500&q=80" alt="Branding y carpetas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <div class="contacto-grid">
+                <!-- Información de contacto -->
+                <div class="contacto-info">
+                    <h2 class="section-title" style="text-align: left; font-size: 2.8rem;">CONTACTO</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px;">
+                        Cuéntanos qué necesitas imprimir y te enviamos una cotización con materiales, acabados y plazos.
+                    </p>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>2 3282 7344 / 2 2554 5466</span>
+                    </div>
+                    <div class="info-item pink">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>ventas@grafikar.cl</span>
+                    </div>
+                    <div class="info-item orange">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>San Alfonso 1010, Santiago, RM</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Lunes a viernes, 9:00 a 18:30 hrs</span>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contact-card">
+                    <form id="cotizacionForm">
+                        <div class="form-row">
+                            <input type="text" class="form-control" placeholder="Nombre" required>
+                            <input type="email" class="form-control" placeholder="Correo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Empresa">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Describe tu proyecto de impresión" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Solicitar Cotización</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Columna 1 -->
+                <div>
+                    <div class="footer-logo-text">Grafikar</div>
+                    <p class="footer-desc">
+                        Impresores SpA — Artes gráficas desde Santiago. Calidad de impresión y asesoría gráfica para tu empresa.
+                    </p>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#que-hacemos">Que Hacemos</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#portafolio">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Tarjetas de Presentación</a></li>
+                        <li><a href="#">Pendones y Lonas</a></li>
+                        <li><a href="#">Letreros y Señalética</a></li>
+                        <li><a href="#">Carpetas Corporativas</a></li>
+                        <li><a href="#">Flyers y Folletos</a></li>
+                        <li><a href="#">Stands y Exhibidores</a></li>
+                        <li><a href="#">Agendas Escolares</a></li>
+                        <li><a href="#">Anuarios</a></li>
+                        <li><a href="#">Etiquetas Autoadhesivas</a></li>
+                        <li><a href="#">Envases y Packaging</a></li>
+                        <li><a href="#">Afiches</a></li>
+                        <li><a href="#">Catálogos y Revistas</a></li>
+                        <li><a href="#">Calendarios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4 -->
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Papelería Corporativa</a></li>
+                        <li><a href="#">Publicidad Impresa</a></li>
+                        <li><a href="#">Impresión Digital</a></li>
+                        <li><a href="#">Stands Publicitarios</a></li>
+                        <li><a href="#">Diseño gráfico y pre-prensa</a></li>
+                        <li><a href="#">Asesoría en materiales y acabados</a></li>
+                        <li><a href="#">Despacho e instalación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 5 -->
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>2 3282 7344 / 2 2554 5466</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>ventas@grafikar.cl</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>San Alfonso 1010, Santiago, Región Metropolitana</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Lunes a viernes, 9:00 a 18:30 hrs</span>
+                    </div>
+
+                    <a href="#contacto" class="btn-footer-quote">Solicitar Cotización</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>GRAFIKAR IMPRESORES SpA — TODOS LOS DERECHOS RESERVADOS</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Manejador del menú de la sección de productos
+        const prodItems = document.querySelectorAll('.prod-item');
+        prodItems.forEach(item => {
+            item.addEventListener('click', () => {
+                prodItems.forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Formulario de contacto
+        document.getElementById('cotizacionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Tu solicitud de cotización ha sido enviada.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
