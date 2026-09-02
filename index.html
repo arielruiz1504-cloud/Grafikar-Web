@@ -143,37 +143,6 @@
             background-color: #ffffff;
         }
 
-        .category-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .cat-btn {
-            padding: 12px 30px;
-            border-radius: 25px;
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .cat-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-        }
-
-        .btn-papeleria { background-color: var(--primary-blue); }
-        .btn-publicidad { background-color: var(--magenta); }
-        .btn-impresion  { background-color: var(--orange); }
-        .btn-stands     { background-color: var(--teal); }
-
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -630,6 +599,22 @@
             letter-spacing: 1px;
         }
 
+        /* Estilo del logo en el Header */
+.header-logo-img {
+    height: 50px; /* Ajusta la altura según se vea mejor en tu barra de navegación */
+    width: auto;
+    display: block;
+}
+
+/* Estilo del logo en el Footer (en negativo usando filtro CSS) */
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    /* Invierte los colores para que pase a negativo (blanco sobre fondo oscuro) */
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
         /* ==========================================
            9. RESPONSIVE DESIGN (MEDIA QUERIES)
            ========================================== */
@@ -681,15 +666,8 @@
     <!-- HEADER / NAVEGACIÓN -->
     <header>
         <div class="container navbar">
-            <a href="#" class="logo">
-                <!-- SVG Simulado del Isotipo de Grafikar -->
-                <svg width="140" height="40" viewBox="0 0 200 60">
-                    <path d="M 30 10 A 20 20 0 1 0 30 50 A 20 20 0 0 0 30 10 Z" fill="none" stroke="#d8128a" stroke-width="4"/>
-                    <path d="M 35 15 A 15 15 0 0 1 45 40" fill="none" stroke="#0e8bc9" stroke-width="4"/>
-                    <path d="M 20 35 A 15 15 0 0 1 35 45" fill="none" stroke="#f58220" stroke-width="4"/>
-                    <text x="55" y="38" font-family="'Brush Script MT', cursive, sans-serif" font-size="32" font-weight="bold" fill="#000">Grafikar</text>
-                    <text x="56" y="48" font-family="sans-serif" font-size="6" fill="#666" letter-spacing="1">IMPRESORES SpA</text>
-                </svg>
+            <a href="#inicio" class="logo-inline-wrapper">
+                <img src="logo-grafikar-slogan.png" alt="Grafikar Logo" class="header-logo-img">
             </a>
             <nav>
                 <ul class="nav-menu">
@@ -897,8 +875,8 @@
             <div class="footer-grid">
                 <!-- Columna 1 -->
                 <div>
-                    <div class="footer-logo-text">Grafikar</div>
-                    <p class="footer-desc">
+                    <img src="logo-grafikar.png" alt="Grafikar Logo en Negativo" class="footer-logo-img">
+                    <p class="footer-desc" style="margin-top: 10px;">
                         Impresores SpA — Artes gráficas desde Santiago. Calidad de impresión y asesoría gráfica para tu empresa.
                     </p>
                 </div>
