@@ -25,6 +25,13 @@ La estructura inicial, maquetación y refactorización a código limpio fueron d
 * [x] Integrar y optimizar el logo oficial junto con su versión institucional en PNG.
 * [x] Integrar imagenes optimizadas de acuerdo a la actividad de la empresa.
 * [x] Incorporar el sistema de categorías dinámicas en la sección de productos.
-* [ ] Actualizar el contenido general de los servicios y enlaces definitivos.
-* [ ] Conectar e implementar la lógica del formulario de contacto.
+* [x] Actualizar el contenido general de los servicios y enlaces definitivos.
+* [x] Conectar e implementar la lógica del formulario de contacto.
 * [ ] Depurar codigo general del proyecto, reorganizado y legible.
+
+## Últimas Actualizaciones
+
+* **Sección Hero:** Incorporación de una impactante imagen de fondo optimizada con un filtro *overlay* para asegurar el contraste, tipografía y elementos centrados para una mejor recepción visual.
+* **Sección Qué Hacemos:** Actualización y optimización de botones interactivos y enlaces.
+* **Formulario de Contacto:** Mejoras en la estructura y funcionalidad de los campos de contacto.
+* **Limpieza y Depuración:** Eliminación de títulos redundantes en las distintas secciones de la landing page y limpieza general del código para mayor rendimiento y orden.
