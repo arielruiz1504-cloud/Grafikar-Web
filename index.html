@@ -268,52 +268,32 @@
     </section>
 
     <!-- Sección Contacto -->
-    <section id="contacto" class="contacto-section">
-        <div class="container">
-            <h2 class="section-title">Contáctanos</h2>
-            <p class="section-subtitle">¿Tienes un proyecto en mente? Escríbenos y te responderemos a la brevedad.</p>
+<section id="contacto" class="contacto-section">
+    <div class="container">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">¿Tienes un proyecto en mente? Escríbenos y te responderemos a la brevedad con una cotización a tu medida.</p>
 
-            <div class="contacto-grid">
-                <div class="contacto-info">
-                    <p class="contacto-desc-text">
-                        Cuéntanos qué necesitas imprimir y te enviamos una cotización con materiales, acabados y plazos.
-                    </p>
-                    <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>2 3282 7344 / 2 2554 5466</span>
+        <!-- Contenedor general centrado -->
+        <div class="contacto-wrapper">
+            <!-- Tarjeta del formulario (Tema Claro) -->
+            <div class="contact-card">
+                <form id="cotizacionForm">
+                    <div class="form-row">
+                        <input type="text" class="form-control" placeholder="Tu Nombre" required>
+                        <input type="email" class="form-control" placeholder="Tu Correo Electrónico" required>
                     </div>
-                    <div class="info-item pink">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>ventas@grafikar.cl</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Empresa (Opcional)">
                     </div>
-                    <div class="info-item orange">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>San Alfonso 1010, Santiago, RM</span>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Describe tu proyecto de impresión (cantidades, materiales, acabados)..." required></textarea>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>Lunes a viernes, 9:00 a 18:30 hrs</span>
-                    </div>
-                </div>
-
-                <div class="contact-card">
-                    <form id="cotizacionForm">
-                        <div class="form-row">
-                            <input type="text" class="form-control" placeholder="Nombre" required>
-                            <input type="email" class="form-control" placeholder="Correo" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Empresa">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Describe tu proyecto de impresión" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Solicitar Cotización</button>
-                    </form>
-                </div>
+                    <button type="submit" class="btn-submit">Solicitar Cotización</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Barra Inferior Decorativa -->
     <div class="rainbow-bar"></div>
