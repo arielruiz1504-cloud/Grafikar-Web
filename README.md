@@ -27,7 +27,7 @@ La estructura inicial, maquetación y refactorización a código limpio fueron d
 * [x] Incorporar el sistema de categorías dinámicas en la sección de productos.
 * [x] Actualizar el contenido general de los servicios y enlaces definitivos.
 * [x] Conectar e implementar la lógica del formulario de contacto.
-* [ ] Depurar codigo general del proyecto, reorganizado y legible.
+* [x] Depurar codigo general del proyecto, reorganizado y legible.
 
 ## Últimas Actualizaciones
 
