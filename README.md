@@ -35,3 +35,10 @@ La estructura inicial, maquetación y refactorización a código limpio fueron d
 * **Sección Qué Hacemos:** Actualización y optimización de botones interactivos y enlaces.
 * **Formulario de Contacto:** Mejoras en la estructura y funcionalidad de los campos de contacto.
 * **Limpieza y Depuración:** Eliminación de títulos redundantes en las distintas secciones de la landing page y limpieza general del código para mayor rendimiento y orden.
+
+## Últimas Actualizaciones
+
+* **Sección Hero:** Nuevo botón de acceso rápido hacia la sección de productos.
+* **Títulos de Secciones:** Creación y estandarización de títulos y subtítulos con líneas decorativas y diseño moderno en *Qué Hacemos*, *Productos*, *Galería* y *Contacto*.
+* **Alternancia de Tonos:** Estilización de los fondos por sección (blanco puro, grises suaves y un fondo oscuro elegante en Contacto) para mejorar el impacto visual y la separación de contenidos.
+* **Enlaces de Cotización:** Conexión funcional mediante etiquetas `<a>` desde los botones de los productos hacia la sección de contacto.

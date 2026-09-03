@@ -33,6 +33,47 @@
             padding: 0;
         }
 
+        
+        .section-title, 
+.section-subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos modernos y profesionales para títulos de sección */
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+/* Línea decorativa elegante debajo del título */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Subtítulo estilizado */
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    text-align: center;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
@@ -171,7 +212,28 @@
             margin-bottom: 30px;
         }
 
-        .btn-main {
+                /* Botón verde de llamada a la acción en el Hero */
+        .btn-hero-green {
+            display: inline-block;
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-hero-green:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+            color: #ffffff;
+        }
+            .btn-main {
             display: inline-block;
             background-color: var(--dark-blue);
             color: #ffffff;
@@ -246,7 +308,7 @@
            ========================================== */
         .productos-section {
             padding: 60px 0 80px 0;
-            background-color: #ffffff;
+            background-color: #f4f6f8;
         }
 
         .productos-layout {
@@ -345,7 +407,7 @@
         }
 
         .feature-box p {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
@@ -396,7 +458,7 @@
            ========================================== */
         .contacto-section {
             padding: 60px 0 80px 0;
-            background-color: #ffffff;
+            background-color: #f4f6f8;
         }
 
         .contacto-grid {
@@ -629,8 +691,9 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>IMPRESIONA<br>CON <span>GRAFIKAR</span></h1>
-                    <p>Elementos gráficos esenciales para tu proyecto, presentación o empresa</p>
+                    <h1>Todo lo que imaginas <br /> impreso a la perfección.</h1>
+                    <p>Packaging, papelería corporativa y material publicitario en un solo lugar.</p>
+                    <a href="#productos" class="btn-hero-green">Conoce Nuestros Productos</a>
                 </div>
             </div>
         </div>
@@ -638,7 +701,6 @@
 
     <section id="que-hacemos" class="que-hacemos">
         <div class="container">
-            <p class="section-subtitle">Utilizamos tecnología óptima en nuestras producciones gráficas para garantizar nuestro servicio en impresión, materiales y publicitarios.</p>
 
             <div class="cards-grid">
                 <div class="card">
@@ -667,21 +729,21 @@
 
     <section id="productos" class="productos-section">
         <div class="container">
-            <p class="section-subtitle">Nuestros productos más solicitados: explora cada uno para conocer sus materiales, acabados y formatos disponibles.</p>
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Nuestros productos más solicitados<br />Explora cada uno para conocer sus materiales, acabados y formatos disponibles.</p>
 
             <div class="productos-layout">
                 <div class="prod-sidebar">
                     <div class="prod-item active" data-target="tarjetas"><span class="dot dot-blue"></span> Tarjetas de Presentación</div>
                     <div class="prod-item" data-target="pendones"><span class="dot dot-pink"></span> Pendones y Lonas</div>
-                    <div class="prod-item" data-target="letreros"><span class="dot dot-orange"></span> Letreros y Señaléticas</div>
                     <div class="prod-item" data-target="panel-carpetas"><span class="dot dot-teal"></span> Carpetas Corporativas</div>
                     <div class="prod-item" data-target="panel-flyers"><span class="dot dot-blue"></span> Flyers y Folletos</div>
                     <div class="prod-item" data-target="panel-stands"><span class="dot dot-pink"></span> Stands y Exhibidores</div>
                     <div class="prod-item" data-target="panel-agendas"><span class="dot dot-teal"></span> Agendas Escolares</div>
                     <div class="prod-item" data-target="panel-anuarios"><span class="dot dot-blue"></span> Anuarios</div>
-                    <div class="prod-item" data-target="panel-etiquetas"><span class="dot dot-pink"></span> Etiquetas Autoadhesivas</div>
+
                     <div class="prod-item" data-target="panel-envases"><span class="dot dot-orange"></span> Envases y Packaging</div>
-                    <div class="prod-item" data-target="panel-afiches"><span class="dot dot-blue"></span> Afiches</div>
+            
                     <div class="prod-item" data-target="panel-catalogos"><span class="dot dot-pink"></span> Catálogos y Revistas</div>
                     <div class="prod-item" data-target="panel-calendarios"><span class="dot dot-teal"></span> Calendarios</div>
                 </div>
@@ -690,7 +752,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Tarjetas de Presentación</h3>
                         <p class="prod-detail-desc">Las tarjetas de presentación empresariales son ideales para dar a conocer tu marca. Cuidamos que tu diseño y contenido generen un gran impacto en cada entrega.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Tarjetas de Presentación</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Tarjetas de Presentación</button>
+</a>
                         <img src="assets/tarjetas.jpg" alt="Tarjetas de Presentación" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -707,7 +771,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Pendones y Lonas</h3>
                         <p class="prod-detail-desc">Pendones de gran formato para fachadas, eventos y campañas exteriores. Impresión de alta resolución resistente a la intemperie.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Pendones y Lonas</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Pendones y Lonas</button>
+</a>
                         <img src="assets/pendones.jpg" alt="Pendones" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -720,28 +786,15 @@
                     </div>
                 </div>
 
-                <div class="prod-panel-content" id="letreros">
-                    <div class="prod-detail">
-                        <h3 class="prod-detail-title">Letreros y Señaléticas</h3>
-                        <p class="prod-detail-desc">Letreros luminosos y corpóreos que hacen visible tu negocio de día y de noche, con fabricación e instalación profesional.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Letreros y Señaléticas</button>
-                        <img src="assets/letreros.jpg" alt="Letreros" class="prod-detail-img">
-                    </div>
-                    <div class="features-card">
-                        <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Tipos</h4><p>Corpóreos, cajas de luz, acrílico y vinilo</p></div>
-                        <div class="feature-box"><h4>Iluminación</h4><p>LED de bajo consumo, frontal o retroiluminado</p></div>
-                        <div class="feature-box"><h4>Materiales</h4><p>Acrílico, aluminio compuesto, PVC espumado y acero</p></div>
-                        <div class="feature-box"><h4>Diseño</h4><p>Asesoría en diseño y visibilidad de tu marca</p></div>
-                        <div class="feature-box"><h4>Montaje</h4><p>Instalación en fachadas y mantenimiento</p></div>
-                    </div>
-                </div>
+            
 
                 <div class="prod-panel-content" id="panel-carpetas">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Carpetas Corporativas</h3>
                         <p class="prod-detail-desc">Carpetas de presentación con bolsillo interior, perfectas para entregar propuestas, cotizaciones y material institucional con imagen profesional.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Carpetas Corporativas</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Carpetas Corporativas</button>
+</a>
                         <img src="assets/carpetas.jpg" alt="Carpetas" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -758,7 +811,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Flyers y Folletos</h3>
                         <p class="prod-detail-desc">Flyers, dípticos y trípticos full color para campañas masivas, reparto y punto de venta, con papel y gramaje a tu medida.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Flyers y Folletos</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Flyers y Folletos</button>
+</a>
                         <img src="assets/flyers.jpg" alt="Flyers" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -775,7 +830,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Stands y Exhibidores</h3>
                         <p class="prod-detail-desc">Stands modulares y exhibidores portátiles para ferias, congresos y activaciones, con diseño gráfico integral y montaje incluido.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Stands y Exhibidores</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Stands y Exhibidores</button>
+</a>
                         <img src="assets/stands.jpg" alt="Stands" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -792,7 +849,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Agendas Escolares</h3>
                         <p class="prod-detail-desc">Agendas escolares personalizadas para colegios e instituciones, con portada propia, contenido institucional y encuadernado resistente para todo el año.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Agendas Escolares</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Agendas Escolares</button>
+</a>
                         <img src="assets/agendas.jpg" alt="Agendas" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -809,7 +868,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Anuarios</h3>
                         <p class="prod-detail-desc">Anuarios escolares y corporativos con acabado de libro premium: tapa dura, papel couché de alto gramaje e impresión fotográfica de máxima calidad.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Anuarios</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Anuarios</button>
+</a>
                         <img src="assets/anuarios.jpg" alt="Anuarios" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -822,28 +883,15 @@
                     </div>
                 </div>
 
-                <div class="prod-panel-content" id="panel-etiquetas">
-                    <div class="prod-detail">
-                        <h3 class="prod-detail-title">Etiquetas Autoadhesivas</h3>
-                        <p class="prod-detail-desc">Etiquetas y stickers autoadhesivos en rollo o pliego para productos, empaques y promociones, con corte a medida y materiales resistentes.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Etiquetas Autoadhesivas</button>
-                        <img src="assets/etiquetas.jpg" alt="Etiquetas" class="prod-detail-img">
-                    </div>
-                    <div class="features-card">
-                        <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Materiales</h4><p>Papel couché, poliéster, vinilo y transparente</p></div>
-                        <div class="feature-box"><h4>Presentación</h4><p>En rollo, pliegos o unidades individuales</p></div>
-                        <div class="feature-box"><h4>Corte</h4><p>Troquelado a medida, cualquier forma</p></div>
-                        <div class="feature-box"><h4>Resistencia</h4><p>Opciones impermeables y para refrigeración</p></div>
-                        <div class="feature-box"><h4>Acabados</h4><p>Laminado mate, brillante o barniz UV</p></div>
-                    </div>
-                </div>
+                
 
                 <div class="prod-panel-content" id="panel-envases">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Envases y Packaging</h3>
                         <p class="prod-detail-desc">Cajas y envases impresos a medida que potencian tu producto en el punto de venta: diseño estructural, impresión full color y acabados premium.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Envases y Packaging</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Envases y Packaging</button>
+</a>
                         <img src="assets/envases.jpg" alt="Envases" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -856,28 +904,14 @@
                     </div>
                 </div>
 
-                <div class="prod-panel-content" id="panel-afiches">
-                    <div class="prod-detail">
-                        <h3 class="prod-detail-title">Afiches</h3>
-                        <p class="prod-detail-desc">Afiches y pósters de gran impacto visual para campañas, eventos y decoración, impresos en alta resolución y papeles de calidad.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Afiches</button>
-                        <img src="assets/afiches.jpg" alt="Afiches" class="prod-detail-img">
-                    </div>
-                    <div class="features-card">
-                        <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Formatos</h4><p>A3, A2, A1, A0 y medidas personalizadas</p></div>
-                        <div class="feature-box"><h4>Papel</h4><p>Couché 150 a 250 g, fotográfico y opalina</p></div>
-                        <div class="feature-box"><h4>Impresión</h4><p>Full color alta resolución, una o ambas caras</p></div>
-                        <div class="feature-box"><h4>Acabados</h4><p>Plastificado, laminado y montaje en foam</p></div>
-                        <div class="feature-box"><h4>Plazos</h4><p>Entregas express en 24 a 48 horas</p></div>
-                    </div>
-                </div>
 
                 <div class="prod-panel-content" id="panel-catalogos">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Catálogos y Revistas</h3>
                         <p class="prod-detail-desc">Catálogos de productos, revistas y publicaciones periódicas con encuadernado profesional e impresión que realza cada fotografía.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Catálogos y Revistas</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Catálogos y Revistas</button>
+</a>
                         <img src="assets/catalogos.jpg" alt="Catálogos" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -894,7 +928,9 @@
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Calendarios</h3>
                         <p class="prod-detail-desc">Calendarios de escritorio, murales y de bolsillo con tu marca presente los 365 días del año, ideales como regalo corporativo.</p>
-                        <button class="btn-main" style="margin-bottom: 20px;">Cotizar Calendarios</button>
+                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+    <button class="btn-main">Cotizar Calendarios</button>
+</a>
                         <img src="assets/calendarios.jpg" alt="Calendarios" class="prod-detail-img">
                     </div>
                     <div class="features-card">
@@ -913,6 +949,8 @@
 
     <section id="portafolio" class="portafolio-section">
         <div class="container">
+             <h2 class="section-title">Galería</h2>
+             <p class="section-subtitle">Explora algunos de nuestros trabajos más recientes. <br />Presición en cada detalle, calidad en cada formato y acabados que hacen destacar a tu marca.</p>
             <div class="portfolio-grid">
                 <div class="portfolio-item"><img src="assets/agendas.jpg" alt="Agendas"></div>
                 <div class="portfolio-item"><img src="assets/envases.jpg" alt="Packaging"></div>
@@ -926,6 +964,7 @@
 
     <section id="contacto" class="contacto-section">
         <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
             <div class="contacto-grid">
                 <div class="contacto-info">
                     <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px;">
