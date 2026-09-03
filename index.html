@@ -4,672 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grafikar - Impresores SpA</title>
+    
+    <!-- Fuentes y Librerías de Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <style>
-        /* ==========================================
-           1. VARIABLES Y REGLAS GENERALES
-           ========================================== */
-        :root {
-            --primary-blue: #0e8bc9;
-            --dark-blue: #114c73;
-            --magenta: #d8128a;
-            --orange: #f58220;
-            --teal: #22a8a0;
-            --dark-bg: #0b0c10;
-            --light-bg: #f8f9fa;
-            --text-dark: #2c3e50;
-            --text-muted: #6c757d;
-            --font-title: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        
-        .section-title, 
-.section-subtitle {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Estilos modernos y profesionales para títulos de sección */
-.section-title {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-    position: relative;
-}
-
-/* Línea decorativa elegante debajo del título */
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #28a745;
-    margin: 12px auto 0 auto;
-    border-radius: 2px;
-}
-
-/* Subtítulo estilizado */
-.section-subtitle {
-    font-size: 1.1rem;
-    color: #6c757d;
-    text-align: center;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    line-height: 1.6;
-}
-        body {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .rainbow-bar {
-            height: 4px;
-            width: 100%;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--magenta) 33%, var(--orange) 66%, var(--teal) 100%);
-        }
-
-        /* ==========================================
-           2. HEADER & NAVEGACIÓN
-           ========================================== */
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #eaeaea;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-
-        .header-logo-img {
-            height: 50px;
-            width: auto;
-            display: block;
-        }
-
-        .footer-logo-img {
-            height: 50px;
-            width: auto;
-            display: block;
-            filter: invert(1) grayscale(100%) brightness(200%);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-link {
-            font-family: var(--font-title);
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--dark-blue);
-        }
-
-        /* ==========================================
-           3. HERO / INICIO
-           ========================================== */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero-bg.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #ffffff;
-            padding: 100px 0;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero h1, .hero p, .hero h2 {
-            color: #ffffff;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .hero-text h1 {
-            font-family: var(--font-title);
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero-text h1 span {
-            color: var(--primary-blue);
-        }
-
-        .hero-text p {
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 30px;
-        }
-
-                /* Botón verde de llamada a la acción en el Hero */
-        .btn-hero-green {
-            display: inline-block;
-            background-color: #28a745;
-            color: #ffffff;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .btn-hero-green:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
-            color: #ffffff;
-        }
-            .btn-main {
-            display: inline-block;
-            background-color: var(--dark-blue);
-            color: #ffffff;
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-main:hover {
-            background-color: #0b3450;
-        }
-
-        /* ==========================================
-           4. SECCIÓN QUÉ HACEMOS
-           ========================================== */
-        .que-hacemos {
-            padding: 60px 0 80px 0;
-            background-color: #ffffff;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f0f0f0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .card-title {
-            font-family: var(--font-title);
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .card-title.papeleria { color: var(--primary-blue); }
-        .card-title.publicidad { color: var(--magenta); }
-        .card-title.impresion { color: var(--orange); }
-        .card-title.stands { color: var(--teal); }
-
-        .card-desc {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* ==========================================
-           5. SECCIÓN PRODUCTOS
-           ========================================== */
-        .productos-section {
-            padding: 60px 0 80px 0;
-            background-color: #f4f6f8;
-        }
-
-        .productos-layout {
-            display: grid;
-            grid-template-columns: 260px 1fr 280px;
-            gap: 30px;
-            align-items: start;
-        }
-
-        .prod-sidebar {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 10px 0;
-        }
-
-        .prod-item {
-            padding: 12px 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #495057;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .prod-item .dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .dot-blue { background-color: var(--primary-blue); }
-        .dot-pink { background-color: var(--magenta); }
-        .dot-orange { background-color: var(--orange); }
-        .dot-teal { background-color: var(--teal); }
-
-        .prod-item:hover,
-        .prod-item.active {
-            background-color: #eef7fc;
-            color: var(--primary-blue);
-        }
-
-        .prod-detail-title {
-            font-family: var(--font-title);
-            color: var(--primary-blue);
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .prod-detail-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .prod-detail-img {
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-            max-height: 270px;
-            margin-bottom: 25px;
-        }
-
-        .features-card {
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .features-header {
-            font-family: var(--font-title);
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 12px 15px;
-            color: #333;
-            letter-spacing: 0.5px;
-        }
-
-        .feature-box {
-            padding: 12px 15px;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .feature-box h4 {
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: #212529;
-        }
-
-        .feature-box p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Sistema de paneles dinámicos */
-        .prod-panel-content {
-            display: none;
-        }
-
-        .prod-panel-content.active {
-            display: contents;
-        }
-
-        /* ==========================================
-           6. SECCIÓN PORTAFOLIO / GALERÍA
-           ========================================== */
-        .portafolio-section {
-            padding: 60px 0 80px 0;
-            background-color: #ffffff;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .portfolio-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            height: 220px;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item img:hover {
-            transform: scale(1.03);
-        }
-
-        /* ==========================================
-           7. SECCIÓN CONTACTO
-           ========================================== */
-        .contacto-section {
-            padding: 60px 0 80px 0;
-            background-color: #f4f6f8;
-        }
-
-        .contacto-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-            color: #495057;
-        }
-
-        .info-item i {
-            color: var(--primary-blue);
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-
-        .info-item.pink i { color: var(--magenta); }
-        .info-item.orange i { color: var(--orange); }
-
-        .contact-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f0f0;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ced4da;
-            border-radius: 6px;
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-blue);
-        }
-
-        textarea.form-control {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: var(--magenta);
-            color: #ffffff;
-            border: none;
-            padding: 14px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background-color: #b80d74;
-        }
-
-        /* ==========================================
-           8. FOOTER
-           ========================================== */
-        footer {
-            background-color: var(--dark-bg);
-            color: #a0a6b1;
-            font-size: 0.8rem;
-            padding-top: 50px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1.2fr 1fr 1.2fr;
-            gap: 25px;
-            padding-bottom: 40px;
-        }
-
-        .footer-desc {
-            line-height: 1.5;
-            font-size: 0.78rem;
-            margin-top: 10px;
-        }
-
-        .footer-col h4 {
-            color: #ffffff;
-            font-family: var(--font-title);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links li {
-            margin-bottom: 8px;
-        }
-
-        .footer-links a {
-            color: #a0a6b1;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-            align-items: flex-start;
-        }
-
-        .footer-contact-item i {
-            margin-top: 3px;
-        }
-
-        .btn-footer-quote {
-            display: block;
-            width: 100%;
-            background-color: var(--orange);
-            color: #ffffff;
-            text-align: center;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-
-        .btn-footer-quote:hover {
-            background-color: #e07216;
-        }
-
-        .footer-bottom {
-            background-color: #050608;
-            padding: 15px 0;
-            border-top: 1px solid #1a1c23;
-            font-size: 0.7rem;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        /* ==========================================
-           9. RESPONSIVE DESIGN (MEDIA QUERIES)
-           ========================================== */
-        @media (max-width: 992px) {
-            .contacto-grid,
-            .productos-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .cards-grid,
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .cards-grid,
-            .portfolio-grid,
-            .footer-grid,
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-        }
-    </style>
+    <!-- Hoja de Estilos Externa -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Barra Superior Decorativa -->
     <div class="rainbow-bar"></div>
 
+    <!-- Header & Navegación Principal -->
     <header>
         <div class="container navbar">
             <a href="#inicio" class="logo-inline-wrapper">
@@ -687,6 +37,7 @@
         </div>
     </header>
 
+    <!-- Sección Hero -->
     <section id="inicio" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -699,40 +50,45 @@
         </div>
     </section>
 
-    <section id="que-hacemos" class="que-hacemos">
+    <!-- Sección Qué Hacemos -->
+    <section id="que-hacemos" class="que-hacemos-section">
         <div class="container">
-
+            <h2 class="section-title">Qué Hacemos</h2>
+            <p class="section-subtitle">Soluciones gráficas integrales adaptadas a las necesidades de tu negocio.</p>
+            
             <div class="cards-grid">
                 <div class="card">
                     <img src="assets/tarjetas.jpg" alt="Papelería" class="card-img">
                     <h3 class="card-title papeleria">Papelería Corporativa</h3>
-                    <p class="card-desc">Diseñamos y producimos todos los elementos de tu papelería corporativa: desde la creación del logotipo hasta tarjetas de visita, carpetas, papeles, formularios y facturas.</p>
+                    <p class="card-desc">Diseñamos y producimos todos los elementos de tu papelería corporativa: desde la creación del logotipo hasta tarjetas de visita, carpetas y formularios.</p>
                 </div>
                 <div class="card">
                     <img src="assets/flyers.jpg" alt="Publicidad Impresa" class="card-img">
                     <h3 class="card-title publicidad">Publicidad Impresa</h3>
-                    <p class="card-desc">Especializados en impresión al por mayor de publicidad. Colaboramos con tu empresa haciendo un análisis de mercado y asesorando el uso de materiales y nuevas tendencias.</p>
+                    <p class="card-desc">Especializados en impresión al por mayor de publicidad, asesorando el uso de materiales de alta calidad y nuevas tendencias gráficas.</p>
                 </div>
                 <div class="card">
                     <img src="assets/digital.jpg" alt="Impresión Digital" class="card-img">
                     <h3 class="card-title impresion">Impresión Digital</h3>
-                    <p class="card-desc">Inversión permanente en nuevas tecnologías para brindar un servicio de impresión digital adecuado a cada cliente, combinando calidad y tiempos de entrega.</p>
+                    <p class="card-desc">Inversión permanente en nuevas tecnologías para brindar un servicio de impresión digital adecuado a cada cliente y plazos eficientes.</p>
                 </div>
                 <div class="card">
                     <img src="assets/stands.jpg" alt="Stands Publicitarios" class="card-img">
                     <h3 class="card-title stands">Stands Publicitarios</h3>
-                    <p class="card-desc">Construimos y fabricamos proyectos de instalación y montaje de stands para exposiciones, congresos y ferias, garantizando su desmontaje y reutilización.</p>
+                    <p class="card-desc">Fabricamos proyectos de instalación y montaje de stands para exposiciones, congresos y ferias, garantizando su durabilidad y reutilización.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Sección Productos -->
     <section id="productos" class="productos-section">
         <div class="container">
             <h2 class="section-title">Nuestros Productos</h2>
-            <p class="section-subtitle">Nuestros productos más solicitados<br />Explora cada uno para conocer sus materiales, acabados y formatos disponibles.</p>
+            <p class="section-subtitle">Nuestros productos más solicitados. Explora cada uno para conocer sus materiales, acabados y formatos disponibles.</p>
 
             <div class="productos-layout">
+                <!-- Sidebar de Categorías -->
                 <div class="prod-sidebar">
                     <div class="prod-item active" data-target="tarjetas"><span class="dot dot-blue"></span> Tarjetas de Presentación</div>
                     <div class="prod-item" data-target="pendones"><span class="dot dot-pink"></span> Pendones y Lonas</div>
@@ -741,216 +97,165 @@
                     <div class="prod-item" data-target="panel-stands"><span class="dot dot-pink"></span> Stands y Exhibidores</div>
                     <div class="prod-item" data-target="panel-agendas"><span class="dot dot-teal"></span> Agendas Escolares</div>
                     <div class="prod-item" data-target="panel-anuarios"><span class="dot dot-blue"></span> Anuarios</div>
-
                     <div class="prod-item" data-target="panel-envases"><span class="dot dot-orange"></span> Envases y Packaging</div>
-            
                     <div class="prod-item" data-target="panel-catalogos"><span class="dot dot-pink"></span> Catálogos y Revistas</div>
                     <div class="prod-item" data-target="panel-calendarios"><span class="dot dot-teal"></span> Calendarios</div>
                 </div>
 
+                <!-- Paneles Dinámicos de Detalles -->
                 <div class="prod-panel-content active" id="tarjetas">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Tarjetas de Presentación</h3>
-                        <p class="prod-detail-desc">Las tarjetas de presentación empresariales son ideales para dar a conocer tu marca. Cuidamos que tu diseño y contenido generen un gran impacto en cada entrega.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Tarjetas de Presentación</button>
-</a>
+                        <p class="prod-detail-desc">Ideales para dar a conocer tu marca con un alto impacto visual en cada entrega.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Tarjetas de Presentación</a>
                         <img src="assets/tarjetas.jpg" alt="Tarjetas de Presentación" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Tamaños</h4><p>9 x 5 cm estándar y formatos personalizados</p></div>
-                        <div class="feature-box"><h4>Material</h4><p>Couché 300 g, opalina, reciclado y cartulinas especiales</p></div>
-                        <div class="feature-box"><h4>Acabados</h4><p>Estándar, plastificado mate, plastificado brillante</p></div>
+                        <div class="feature-box"><h4>Tamaños</h4><p>9 x 5 cm estándar y personalizados</p></div>
+                        <div class="feature-box"><h4>Material</h4><p>Couché 300 g, opalina y cartulinas especiales</p></div>
+                        <div class="feature-box"><h4>Acabados</h4><p>Estándar, plastificado mate o brillante</p></div>
                         <div class="feature-box"><h4>Puntas</h4><p>Rectas o redondeadas</p></div>
-                        <div class="feature-box"><h4>Modo de Impresión</h4><p>Tiro simple o tiro y retiro, full color</p></div>
                     </div>
                 </div>
 
                 <div class="prod-panel-content" id="pendones">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Pendones y Lonas</h3>
-                        <p class="prod-detail-desc">Pendones de gran formato para fachadas, eventos y campañas exteriores. Impresión de alta resolución resistente a la intemperie.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Pendones y Lonas</button>
-</a>
+                        <p class="prod-detail-desc">De gran formato para fachadas, eventos y campañas exteriores resistentes a la intemperie.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Pendones y Lonas</a>
                         <img src="assets/pendones.jpg" alt="Pendones" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Tamaños</h4><p>Desde 1 x 1 m hasta gigantografías a medida</p></div>
+                        <div class="feature-box"><h4>Tamaños</h4><p>Gigantografías a medida</p></div>
                         <div class="feature-box"><h4>Material</h4><p>Lona PVC frontlit, malla mesh y tela</p></div>
-                        <div class="feature-box"><h4>Terminaciones</h4><p>Ojales metálicos, bolsillos y refuerzos perimetrales</p></div>
-                        <div class="feature-box"><h4>Uso</h4><p>Interior y exterior, resistente a UV e intemperie</p></div>
-                        <div class="feature-box"><h4>Instalación</h4><p>Despacho e instalación disponible en Santiago</p></div>
+                        <div class="feature-box"><h4>Terminaciones</h4><p>Ojales metálicos y refuerzos perimetrales</p></div>
                     </div>
                 </div>
-
-            
 
                 <div class="prod-panel-content" id="panel-carpetas">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Carpetas Corporativas</h3>
-                        <p class="prod-detail-desc">Carpetas de presentación con bolsillo interior, perfectas para entregar propuestas, cotizaciones y material institucional con imagen profesional.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Carpetas Corporativas</button>
-</a>
+                        <p class="prod-detail-desc">Con bolsillo interior, perfectas para entregar propuestas con imagen profesional.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Carpetas Corporativas</a>
                         <img src="assets/carpetas.jpg" alt="Carpetas" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Formato</h4><p>Carta y oficio, con lomo de 3 a 10 mm</p></div>
-                        <div class="feature-box"><h4>Material</h4><p>Cartulina 300–350 g plastificada mate o brillante</p></div>
-                        <div class="feature-box"><h4>Bolsillo</h4><p>Simple o doble, con troquel para tarjeta</p></div>
-                        <div class="feature-box"><h4>Acabados</h4><p>Barniz sectorizado, stamping y relieve</p></div>
-                        <div class="feature-box"><h4>Tiraje</h4><p>Desde 100 unidades en adelante</p></div>
+                        <div class="feature-box"><h4>Formato</h4><p>Carta y oficio</p></div>
+                        <div class="feature-box"><h4>Material</h4><p>Cartulina 300–350 g</p></div>
+                        <div class="feature-box"><h4>Acabados</h4><p>Barniz sectorizado y stamping</p></div>
                     </div>
                 </div>
 
                 <div class="prod-panel-content" id="panel-flyers">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Flyers y Folletos</h3>
-                        <p class="prod-detail-desc">Flyers, dípticos y trípticos full color para campañas masivas, reparto y punto de venta, con papel y gramaje a tu medida.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Flyers y Folletos</button>
-</a>
+                        <p class="prod-detail-desc">Full color para campañas masivas y puntos de venta.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Flyers y Folletos</a>
                         <img src="assets/flyers.jpg" alt="Flyers" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
                         <div class="feature-box"><h4>Formatos</h4><p>A6, A5, A4, dípticos y trípticos</p></div>
-                        <div class="feature-box"><h4>Material</h4><p>Couché 115 a 300 g, brillante o mate</p></div>
-                        <div class="feature-box"><h4>Impresión</h4><p>Full color ambas caras</p></div>
-                        <div class="feature-box"><h4>Pliegues</h4><p>Plegado en dos, tres o acordeón</p></div>
-                        <div class="feature-box"><h4>Tiraje</h4><p>Tirajes cortos digitales o grandes volúmenes offset</p></div>
+                        <div class="feature-box"><h4>Material</h4><p>Couché 115 a 300 g</p></div>
                     </div>
                 </div>
 
                 <div class="prod-panel-content" id="panel-stands">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Stands y Exhibidores</h3>
-                        <p class="prod-detail-desc">Stands modulares y exhibidores portátiles para ferias, congresos y activaciones, con diseño gráfico integral y montaje incluido.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Stands y Exhibidores</button>
-</a>
+                        <p class="prod-detail-desc">Modulares y portátiles para ferias y congresos.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Stands y Exhibidores</a>
                         <img src="assets/stands.jpg" alt="Stands" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Sistemas</h4><p>Roller, araña, pop-up y stands modulares</p></div>
-                        <div class="feature-box"><h4>Medidas</h4><p>Desde 85 x 200 cm hasta stands completos</p></div>
-                        <div class="feature-box"><h4>Gráfica</h4><p>Textil tensado o PVC intercambiable</p></div>
-                        <div class="feature-box"><h4>Portabilidad</h4><p>Maletas de transporte y armado sin herramientas</p></div>
-                        <div class="feature-box"><h4>Servicio</h4><p>Montaje, desmontaje y reutilización garantizada</p></div>
+                        <div class="feature-box"><h4>Sistemas</h4><p>Roller, araña y pop-up</p></div>
+                        <div class="feature-box"><h4>Servicio</h4><p>Montaje y desmontaje</p></div>
                     </div>
                 </div>
 
                 <div class="prod-panel-content" id="panel-agendas">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Agendas Escolares</h3>
-                        <p class="prod-detail-desc">Agendas escolares personalizadas para colegios e instituciones, con portada propia, contenido institucional y encuadernado resistente para todo el año.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Agendas Escolares</button>
-</a>
+                        <p class="prod-detail-desc">Personalizadas para colegios e instituciones con encuadernado resistente.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Agendas Escolares</a>
                         <img src="assets/agendas.jpg" alt="Agendas" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Formatos</h4><p>Media carta, carta y formatos especiales</p></div>
-                        <div class="feature-box"><h4>Encuadernado</h4><p>Espiral metálico, wire-o o empastado</p></div>
-                        <div class="feature-box"><h4>Contenido</h4><p>Páginas internas personalizadas por curso o nivel</p></div>
-                        <div class="feature-box"><h4>Portada</h4><p>Cartulina plastificada o tapa dura con laminado</p></div>
-                        <div class="feature-box"><h4>Tiraje</h4><p>Desde 50 unidades, precios por volumen</p></div>
+                        <div class="feature-box"><h4>Encuadernado</h4><p>Espiral metálico o wire-o</p></div>
+                        <div class="feature-box"><h4>Tiraje</h4><p>Desde 50 unidades</p></div>
                     </div>
                 </div>
 
                 <div class="prod-panel-content" id="panel-anuarios">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Anuarios</h3>
-                        <p class="prod-detail-desc">Anuarios escolares y corporativos con acabado de libro premium: tapa dura, papel couché de alto gramaje e impresión fotográfica de máxima calidad.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Anuarios</button>
-</a>
+                        <p class="prod-detail-desc">Acabado de libro premium con tapa dura e impresión fotográfica.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Anuarios</a>
                         <img src="assets/anuarios.jpg" alt="Anuarios" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Encuadernado</h4><p>Tapa dura cosida con lomo redondeado</p></div>
-                        <div class="feature-box"><h4>Papel</h4><p>Couché mate o brillante de 150 a 200 g</p></div>
+                        <div class="feature-box"><h4>Encuadernado</h4><p>Tapa dura cosida</p></div>
                         <div class="feature-box"><h4>Páginas</h4><p>Desde 48 páginas full color</p></div>
-                        <div class="feature-box"><h4>Diseño</h4><p>Servicio de diagramación y retoque fotográfico</p></div>
-                        <div class="feature-box"><h4>Extras</h4><p>Sobrecubierta, cinta señaladora y láminas especiales</p></div>
                     </div>
                 </div>
-
-                
 
                 <div class="prod-panel-content" id="panel-envases">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Envases y Packaging</h3>
-                        <p class="prod-detail-desc">Cajas y envases impresos a medida que potencian tu producto en el punto de venta: diseño estructural, impresión full color y acabados premium.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Envases y Packaging</button>
-</a>
+                        <p class="prod-detail-desc">Cajas y envases a medida que potencian tu producto en el punto de venta.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Envases y Packaging</a>
                         <img src="assets/envases.jpg" alt="Envases" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Materiales</h4><p>Cartulina, microcorrugado y cartón piedra</p></div>
-                        <div class="feature-box"><h4>Tipos</h4><p>Cajas automontables, estuches, mangas y displays</p></div>
-                        <div class="feature-box"><h4>Impresión</h4><p>Full color offset o digital según tiraje</p></div>
-                        <div class="feature-box"><h4>Acabados</h4><p>Plastificado, stamping, relieve y troquel</p></div>
-                        <div class="feature-box"><h4>Desarrollo</h4><p>Prototipos y muestras antes de producir</p></div>
+                        <div class="feature-box"><h4>Materiales</h4><p>Cartulina y microcorrugado</p></div>
+                        <div class="feature-box"><h4>Tipos</h4><p>Cajas automontables y estuches</p></div>
                     </div>
                 </div>
-
 
                 <div class="prod-panel-content" id="panel-catalogos">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Catálogos y Revistas</h3>
-                        <p class="prod-detail-desc">Catálogos de productos, revistas y publicaciones periódicas con encuadernado profesional e impresión que realza cada fotografía.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Catálogos y Revistas</button>
-</a>
+                        <p class="prod-detail-desc">Publicaciones periódicas con encuadernado profesional.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Catálogos y Revistas</a>
                         <img src="assets/catalogos.jpg" alt="Catálogos" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Encuadernado</h4><p>Grapado, hotmelt, espiral o cosido</p></div>
-                        <div class="feature-box"><h4>Páginas</h4><p>Desde 8 hasta 200+ páginas full color</p></div>
-                        <div class="feature-box"><h4>Papel</h4><p>Couché 90 a 170 g interior, portada 250 g</p></div>
-                        <div class="feature-box"><h4>Portada</h4><p>Plastificado mate o brillante con solapas</p></div>
-                        <div class="feature-box"><h4>Tiraje</h4><p>Digital para tirajes cortos, offset para volumen</p></div>
+                        <div class="feature-box"><h4>Encuadernado</h4><p>Grapado u hotmelt</p></div>
+                        <div class="feature-box"><h4>Páginas</h4><p>Hasta 200+ páginas</p></div>
                     </div>
                 </div>
 
                 <div class="prod-panel-content" id="panel-calendarios">
                     <div class="prod-detail">
                         <h3 class="prod-detail-title">Calendarios</h3>
-                        <p class="prod-detail-desc">Calendarios de escritorio, murales y de bolsillo con tu marca presente los 365 días del año, ideales como regalo corporativo.</p>
-                        <a href="#contacto" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
-    <button class="btn-main">Cotizar Calendarios</button>
-</a>
+                        <p class="prod-detail-desc">Escritorio y murales con tu marca presente todo el año.</p>
+                        <a href="#contacto" class="btn-main">Cotizar Calendarios</a>
                         <img src="assets/calendarios.jpg" alt="Calendarios" class="prod-detail-img">
                     </div>
                     <div class="features-card">
                         <div class="features-header">Características Principales</div>
-                        <div class="feature-box"><h4>Tipos</h4><p>Escritorio, mural, de bolsillo y magnéticos</p></div>
-                        <div class="feature-box"><h4>Encuadernado</h4><p>Espiral wire-o con colgador o base rígida</p></div>
-                        <div class="feature-box"><h4>Papel</h4><p>Couché 200 a 300 g plastificado</p></div>
-                        <div class="feature-box"><h4>Personalización</h4><p>Fechas, feriados y fotografías de tu empresa</p></div>
-                        <div class="feature-box"><h4>Tiraje</h4><p>Desde 25 unidades personalizadas</p></div>
+                        <div class="feature-box"><h4>Tipos</h4><p>Escritorio y mural</p></div>
+                        <div class="feature-box"><h4>Encuadernado</h4><p>Espiral wire-o</p></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- Sección Galería -->
     <section id="portafolio" class="portafolio-section">
         <div class="container">
-             <h2 class="section-title">Galería</h2>
-             <p class="section-subtitle">Explora algunos de nuestros trabajos más recientes. <br />Presición en cada detalle, calidad en cada formato y acabados que hacen destacar a tu marca.</p>
+            <h2 class="section-title">Galería</h2>
+            <p class="section-subtitle">Explora algunos de nuestros trabajos más recientes. Precisión en cada detalle, calidad en cada formato y acabados que hacen destacar a tu marca.</p>
+            
             <div class="portfolio-grid">
                 <div class="portfolio-item"><img src="assets/agendas.jpg" alt="Agendas"></div>
                 <div class="portfolio-item"><img src="assets/envases.jpg" alt="Packaging"></div>
@@ -962,12 +267,15 @@
         </div>
     </section>
 
+    <!-- Sección Contacto -->
     <section id="contacto" class="contacto-section">
         <div class="container">
             <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente? Escríbenos y te responderemos a la brevedad.</p>
+
             <div class="contacto-grid">
                 <div class="contacto-info">
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px;">
+                    <p class="contacto-desc-text">
                         Cuéntanos qué necesitas imprimir y te enviamos una cotización con materiales, acabados y plazos.
                     </p>
                     <div class="info-item">
@@ -1007,7 +315,10 @@
         </div>
     </section>
 
+    <!-- Barra Inferior Decorativa -->
     <div class="rainbow-bar"></div>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1034,7 +345,6 @@
                     <ul class="footer-links">
                         <li><a href="#productos">Tarjetas de Presentación</a></li>
                         <li><a href="#productos">Pendones y Lonas</a></li>
-                        <li><a href="#productos">Letreros y Señalética</a></li>
                         <li><a href="#productos">Carpetas Corporativas</a></li>
                         <li><a href="#productos">Flyers y Folletos</a></li>
                         <li><a href="#productos">Stands y Exhibidores</a></li>
@@ -1063,7 +373,7 @@
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>San Alfonso 1010, Santiago, Región Metropolitana</span>
+                        <span>San Alfonso 1010, Santiago, RM</span>
                     </div>
                     <a href="#contacto" class="btn-footer-quote">Solicitar Cotización</a>
                 </div>
@@ -1075,35 +385,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuItems = document.querySelectorAll(".prod-item");
-            const panels = document.querySelectorAll(".prod-panel-content");
-
-            menuItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    menuItems.forEach(i => i.classList.remove("active"));
-                    panels.forEach(p => p.classList.remove("active"));
-
-                    item.classList.add("active");
-
-                    const targetId = item.getAttribute("data-target");
-                    const targetPanel = document.getElementById(targetId);
-                    if (targetPanel) {
-                        targetPanel.classList.add("active");
-                    }
-                });
-            });
-
-            const cotizacionForm = document.getElementById('cotizacionForm');
-            if (cotizacionForm) {
-                cotizacionForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('¡Gracias por tu mensaje! Tu solicitud de cotización ha sido enviada.');
-                    this.reset();
-                });
-            }
-        });
-    </script>
+    <!-- Script Externo -->
+    <script src="main.js"></script>
 </body>
 </html>
