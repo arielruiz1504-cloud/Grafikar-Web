@@ -42,3 +42,6 @@ La estructura inicial, maquetación y refactorización a código limpio fueron d
 * **Títulos de Secciones:** Creación y estandarización de títulos y subtítulos con líneas decorativas y diseño moderno en *Qué Hacemos*, *Productos*, *Galería* y *Contacto*.
 * **Alternancia de Tonos:** Estilización de los fondos por sección (blanco puro, grises suaves y un fondo oscuro elegante en Contacto) para mejorar el impacto visual y la separación de contenidos.
 * **Enlaces de Cotización:** Conexión funcional mediante etiquetas `<a>` desde los botones de los productos hacia la sección de contacto.
+
+* Puedes ver este proyecto en vivo, gracias a GitHub Pages.
+  https://arielruiz1504-cloud.github.io/Grafikar-Web
